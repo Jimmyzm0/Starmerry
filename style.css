@@ -1,0 +1,166 @@
+/* 设置整个页面的字体和背景 */
+body {
+    font-family: 'Cursive', sans-serif;
+    background-image: url('images/christmas-background.jpg'); /* 添加背景圖片 */
+    background-size: cover; /* 確保圖片覆蓋整個網頁 */
+    background-position: center; /* 將圖片置於中央 */
+    background-repeat: no-repeat; /* 避免背景圖片重複 */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden; /* 防止在整个页面上出现滚动条 */
+}
+
+/* 设置卡片的样式 */
+#card {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    max-width: 400px;
+    animation: cardEntry 1s ease-in-out; /* 卡片進入動畫 */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* 轻微透明的白色背景增加可读性 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 轻微的阴影效果 */
+    padding: 20px; /* 调整内边距 */
+    margin: auto; /* 水平居中 */
+    max-width: 400px; /* 设置最大宽度 */
+}
+
+/* 设置标题的样式 */
+h1 {
+    color: #D50000; /* 圣诞红色 */
+    font-size: 2.5em; /* 增大标题字体大小 */
+    margin-bottom: 20px; /* 在标题和文本之间添加一些空间 */
+}
+
+/* 设置祝福文本的样式 */
+#blessingText {
+    color: #333; /* 深色文字，增加对比 */
+    font-size: 1.2em; /* 适当的字体大小 */
+    padding: 15px; /* 内边距使文本更加舒展 */
+    background-color: rgba(255, 255, 255, 0.8); /* 轻微透明的背景增加层次感 */
+}
+
+/* 设置按钮的样式 */
+button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px; /* 在按钮和文本之间添加一些空间 */
+}
+
+/* 鼠标悬停按钮时的样式 */
+button:hover {
+    background-color: darkgreen;
+    transform: scale(1.1);
+}
+
+/* 禁用按钮的样式 */
+button:disabled {
+    background-color: grey;
+    cursor: default;
+}
+
+/* 响应式设计 - 当屏幕宽度小于600px时 */
+@media (max-width: 600px) {
+    #card {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* 响应式设计 - 当屏幕宽度在601px到1024px之间时 */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #card {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+/* 响应式设计 - 当屏幕宽度大于1025px时 */
+@media (min-width: 1025px) {
+    #card {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
+/* 雪花样式 */
+.snowflake {
+    position: absolute;
+    top: -10%;
+    left: calc(5% + 90% * var(--random)); /* 随机位置 */
+    width: 20px; /* 雪花的宽度 */
+    height: 20px; /* 雪花的高度 */
+    background-image: url('images/雪花.png'); /* 雪花图片 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: var(--opacity); /* 可以调整透明度 */
+    animation: fall var(--duration) linear infinite;
+}
+
+/* 雪花下落动画 */
+@keyframes fall {
+    0% { top: -10%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* 为每个雪花元素指定随机特性 */
+.snowflake:nth-child(1) { --random: 0.1; --duration: 10s; --opacity: 0.7; }
+.snowflake:nth-child(2) { --random: 0.2; --duration: 12s; --opacity: 0.5; }
+.snowflake:nth-child(3) { --random: 0.3; --duration: 11s; --opacity: 0.6; }
+.snowflake:nth-child(4) { --random: 0.4; --duration: 9s;  --opacity: 0.8; }
+.snowflake:nth-child(5) { --random: 0.5; --duration: 13s; --opacity: 0.4; }
+.snowflake:nth-child(6) { --random: 0.6; --duration: 8s;  --opacity: 0.9; }
+.snowflake:nth-child(7) { --random: 0.7; --duration: 14s; --opacity: 0.3; }
+.snowflake:nth-child(8) { --random: 0.8; --duration: 7s;  --opacity: 1.0; }
+.snowflake:nth-child(9) { --random: 0.9; --duration: 15s; --opacity: 0.2; }
+.snowflake:nth-child(10) { --random: 1.0; --duration: 6s; --opacity: 0.9; }
+/* ...根据需要添加更多的雪花... */
+/* 調整標題和段落的間距 */
+h1, p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 複製確認提示的翻轉動畫 */
+.flip-in {
+    animation: flipIn 0.6s ease-in-out;
+}
+
+@keyframes flipIn {
+    from {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
