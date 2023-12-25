@@ -38,7 +38,7 @@ function copyToClipboard(text) {
         confirmation.style.display = 'block'; // 顯示提示
         confirmation.classList.add('flip-in'); // 添加翻轉效果
     }).catch(err => {
-        console.error('複製失敗：', err);
+        console.error('복사 실패：', err);
     });
 }
 
